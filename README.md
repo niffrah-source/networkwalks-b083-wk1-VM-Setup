@@ -12,4 +12,6 @@ we can test suspicious files , commands and malware so that even if something go
 # Set-up Instructions
 # Download Windows 10 ISO 
 go to the Windows 10 download page scroll under windows 10 installation media and select download now.
-![VM-setup](creenshot%202026-09-11%213636.png)
+![VM-setup](screenshot%202026-09-11%213636.png)
+* Run MediaCreationTool.exe.
+* accept microsoft license and terms. 
