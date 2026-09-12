@@ -32,12 +32,18 @@ we can test suspicious files , commands and malware so that even if something go
 * select ISO image and choose windows 10 ISO u downloaded.
 * below are screenshots
 
+  ![Windows 10 VM Setup](Screenshot%202026-09-11%20233126.png)
+
+![Windows 10 VM Setup](Screenshot%202026-09-11%20233155.png)
+
   # Set the network to NAT network
   * shutdown VM.
   * go to settings> network
   * select attach to : NAT Network
   * in name select the same your kali-linux uses
   * start VM again.
+
+    ![Windows 10 VM Setup](Screenshot%202026-09-12%20000301.png)
  
     # Set static IP inside windows
     * Open Control Panel > Network and Sharing Center > Change adapter settings
@@ -55,11 +61,16 @@ we can test suspicious files , commands and malware so that even if something go
    ![Windows 10 VM Setup](img4.jpeg)
    ![Windows 10 VM Setup](img5.jpeg)
    ![Windows 10 VM Setup](img6.jpeg)
-      # test connectivity
-      * Open Command Prompt on Windows
-      *  Run: ping 10.0.0.2 (this should reach your Kali VM)
-      *  Run: ping 8.8.8.8 (this should confirm internet access)
-      *  On Kali, run: ping 10.0.0.10 (this should reach Windows)
+  # test connectivity
+  * Open Command Prompt on Windows
+  *  Run: ping 10.0.0.2 (this should reach your Kali VM)
+  *  Run: ping 8.8.8.8 (this should confirm internet access)
+  *  On Kali, run: ping 10.0.0.10 (this should reach Windows)
 
   ![Windows 10 VM Setup](img7.jpeg)
-  ![Windows 10 VM Setup](img8.jpeg)
+  ![Windows 10 VM Setup](img8.jpeg).
+
+  # Challenges I faced:
+  I faced a challenge while testing connectivity between the Windows 10 VM and the Kali Linux VM. The connectivity test from the Windows VM to the Kali Linux VM was successful. However, when I attempted to ping the Windows VM from Kali Linux, the packets failed to transmit on multiple attempts.
+I troubleshot the issue and identified that the Windows Firewall was blocking inbound ICMP requests from the Kali Linux VM. After configuring the firewall to allow the required inbound requests, I successfully established connectivity and was able to ping the Windows VM from Kali Linux.
+This troubleshooting process helped me understand how firewall rules can affect communication between virtual machines within a lab network
